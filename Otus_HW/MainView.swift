@@ -8,27 +8,36 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var selectedTab = 0
+    @State private var selectedItemIndex: Int? = nil
+    
     var body: some View {
-        NavigationView {
-            TabView {
-                ButtonForNavigationView()
-                    .tabItem {
-                        Image(systemName: "n.circle")
-                        Text("Button to List")
-                    }
-                
-                ListView()
-                    .tabItem {
-                        Image(systemName: "list.bullet.circle")
-                        Text("List")
-                    }
-                
-                ModalPerformerView()
-                    .tabItem {
-                        Image(systemName: "arrow.up.doc.on.clipboard")
-                        Text("Modal perform")
-                    }
+        TabView(selection: $selectedTab) {
+            ButtonForNavigationView(
+                selectedTab: $selectedTab,
+                selectedItemIndex: $selectedItemIndex
+            )
+            .tabItem {
+                Image(systemName: "n.circle")
+                Text("Button to List")
             }
+            .tag(0)
+            
+            NavigationView {
+                ListView(selectedItemIndex: $selectedItemIndex)
+            }
+            .tabItem {
+                Image(systemName: "list.bullet.circle")
+                Text("List")
+            }
+            .tag(1)
+            
+            ModalPerformerView()
+                .tabItem {
+                    Image(systemName: "arrow.up.doc.on.clipboard")
+                    Text("Modal perform")
+                }
+                .tag(2)
         }
     }
 }

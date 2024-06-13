@@ -65,12 +65,9 @@
 			children = (
 				43FA5ABC2C1AC48700E921A1 /* InitialApp.swift */,
 				43FA5ABE2C1AC48700E921A1 /* MainView.swift */,
-				43FA5ACE2C1AC9F000E921A1 /* ButtonForNavigationView.swift */,
-				43FA5ACA2C1AC75D00E921A1 /* ListView.swift */,
-				43FA5AD42C1AD42B00E921A1 /* ListItem.swift */,
-				43FA5ACC2C1AC77200E921A1 /* DetailView.swift */,
-				43FA5AD02C1ACD7E00E921A1 /* ModalPerformerView.swift */,
-				43FA5AD22C1ACEC400E921A1 /* ModalView.swift */,
+				43FA5AD62C1AF33900E921A1 /* ButtonNavigationScreen */,
+				43FA5AD72C1AF35400E921A1 /* TaskListScreen */,
+				43FA5AD92C1AF39500E921A1 /* ModalPerformerScreen */,
 				43FA5AC02C1AC48800E921A1 /* Assets.xcassets */,
 				43FA5AC22C1AC48800E921A1 /* Preview Content */,
 			);
@@ -83,6 +80,41 @@
 				43FA5AC32C1AC48800E921A1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		43FA5AD62C1AF33900E921A1 /* ButtonNavigationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				43FA5ACE2C1AC9F000E921A1 /* ButtonForNavigationView.swift */,
+			);
+			path = ButtonNavigationScreen;
+			sourceTree = "<group>";
+		};
+		43FA5AD72C1AF35400E921A1 /* TaskListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				43FA5AD82C1AF37400E921A1 /* Model */,
+				43FA5ACC2C1AC77200E921A1 /* DetailView.swift */,
+				43FA5ACA2C1AC75D00E921A1 /* ListView.swift */,
+			);
+			path = TaskListScreen;
+			sourceTree = "<group>";
+		};
+		43FA5AD82C1AF37400E921A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				43FA5AD42C1AD42B00E921A1 /* ListItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		43FA5AD92C1AF39500E921A1 /* ModalPerformerScreen */ = {
+			isa = PBXGroup;
+			children = (
+				43FA5AD22C1ACEC400E921A1 /* ModalView.swift */,
+				43FA5AD02C1ACD7E00E921A1 /* ModalPerformerView.swift */,
+			);
+			path = ModalPerformerScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct DetailView: View {
+    let item: ListItem?
+    
     var body: some View {
         VStack {
             Image(systemName: "filemenu.and.cursorarrow")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Detail view")
+            Text("Detail view for \(item?.name ?? "error")")
+                .navigationTitle(item?.name ?? "error")
         }
         .padding()
     }
 }
 
 #Preview {
-    DetailView()
+    DetailView(item: nil)
 }
