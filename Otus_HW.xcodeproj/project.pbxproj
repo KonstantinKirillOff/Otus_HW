@@ -17,6 +17,7 @@
 		43FA5AD12C1ACD7E00E921A1 /* ModalPerformerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5AD02C1ACD7E00E921A1 /* ModalPerformerView.swift */; };
 		43FA5AD32C1ACEC400E921A1 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5AD22C1ACEC400E921A1 /* ModalView.swift */; };
 		43FA5AD52C1AD42B00E921A1 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5AD42C1AD42B00E921A1 /* ListItem.swift */; };
+		43FA5ADC2C1B321600E921A1 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5ADB2C1B321600E921A1 /* Spinner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		43FA5AD02C1ACD7E00E921A1 /* ModalPerformerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPerformerView.swift; sourceTree = "<group>"; };
 		43FA5AD22C1ACEC400E921A1 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		43FA5AD42C1AD42B00E921A1 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		43FA5ADB2C1B321600E921A1 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			children = (
 				43FA5ABC2C1AC48700E921A1 /* InitialApp.swift */,
 				43FA5ABE2C1AC48700E921A1 /* MainView.swift */,
+				43FA5ADA2C1B30DE00E921A1 /* UI */,
 				43FA5AD62C1AF33900E921A1 /* ButtonNavigationScreen */,
 				43FA5AD72C1AF35400E921A1 /* TaskListScreen */,
 				43FA5AD92C1AF39500E921A1 /* ModalPerformerScreen */,
@@ -115,6 +118,14 @@
 				43FA5AD02C1ACD7E00E921A1 /* ModalPerformerView.swift */,
 			);
 			path = ModalPerformerScreen;
+			sourceTree = "<group>";
+		};
+		43FA5ADA2C1B30DE00E921A1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				43FA5ADB2C1B321600E921A1 /* Spinner.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +205,7 @@
 				43FA5AD52C1AD42B00E921A1 /* ListItem.swift in Sources */,
 				43FA5AD32C1ACEC400E921A1 /* ModalView.swift in Sources */,
 				43FA5ACB2C1AC75D00E921A1 /* ListView.swift in Sources */,
+				43FA5ADC2C1B321600E921A1 /* Spinner.swift in Sources */,
 				43FA5ACF2C1AC9F100E921A1 /* ButtonForNavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

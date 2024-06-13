@@ -33,11 +33,11 @@ struct MainView: View {
             .tag(1)
             
             ModalPerformerView()
-                .tabItem {
-                    Image(systemName: "arrow.up.doc.on.clipboard")
-                    Text("Modal perform")
-                }
-                .tag(2)
+            .tabItem {
+                Image(systemName: "arrow.up.doc.on.clipboard")
+                Text("Modal perform")
+            }
+            .tag(2)
         }
     }
 }

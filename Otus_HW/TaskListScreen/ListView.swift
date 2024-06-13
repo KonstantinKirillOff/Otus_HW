@@ -9,45 +9,44 @@ import SwiftUI
 
 struct ListView: View {
     @State private var selectedItem: ListItem?
-    @State private var listItems = [ListItem]()
     @State private var isLinkActive = false
+    @State private var listItems = [ListItem]()
+    @State private var isLoading = true
     
     @Binding var selectedItemIndex: Int?
     
     var body: some View {
-        List(listItems) { item in
-            Button(item.name) {
-                selectedItem = item
-                isLinkActive = true
+        ZStack {
+            Spinner(isAnimating: isLoading, style: .large)
+            List(listItems) { item in
+                Button(item.name) {
+                    self.selectedItem = item
+                    self.isLinkActive = true
+                }
             }
+            .navigationTitle("Task List")
+            .listStyle(.plain)
         }
-        .navigationTitle("Task List")
-        .listStyle(.plain)
         .background(
             NavigationLink(
                 destination: DetailView(item: selectedItem),
                 isActive: $isLinkActive) {
-                EmptyView()
-            }
+                    EmptyView()
+                }
         )
         .onAppear() {
-            //DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            listItems = ListItem.getItemsForList()
-            if let selectedItemIndex = selectedItemIndex {
-                selectedItem = listItems[selectedItemIndex]
-                isLinkActive = true
+            self.listItems = ListItem.getItemsForList()
+            self.isLoading = false
+            
+            if let selectedItemIndex = selectedItemIndex  {
+                self.selectedItem = listItems[selectedItemIndex]
+                self.isLinkActive = true
             }
-            //}
         }
         
     }
 }
 
-//#Preview {
-//    ListView(
-//        selectedItem: nil,
-//        listItems: .cons,
-//        isLinkActive: <#T##arg#>,
-//        selectedItemIndex: Int?
-//    )
-//}
+#Preview {
+    ListView(selectedItemIndex: .constant(0))
+}

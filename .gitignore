@@ -1,0 +1,72 @@
+# Xcode
+#
+# gitignore template for Xcode projects
+# 
+# This is a tailored .gitignore file that covers the majority of Xcode-related files.
+# Depending on your project, you may need to adjust it more to your needs.
+
+# Xcode Derived Data
+DerivedData/
+
+# Xcode archives
+*.xcarchive
+
+# Xcode Schemes
+xcuserdata/
+
+# Xcode workspace - Comment this line if you're using a workspace
+# *.xcworkspace
+
+# User-specific files
+*.moved-aside
+*.xcuserstate
+
+# CocoaPods - Uncomment this line if you're using CocoaPods
+# Pods/
+
+# Carthage - Uncomment this line if you're using Carthage
+# Carthage/Build
+
+# Fastlane - Uncomment this line if you're using Fastlane
+# fastlane/report.xml
+# fastlane/Preview.html
+# fastlane/screenshots
+# fastlane/test_output
+
+# Swift PM - Uncomment this line if you're using Swift Package Manager
+# .build/
+
+# Playgrounds - Uncomment these lines if you're using Playgrounds
+# *.playground/
+# *.playground/Sources
+# *.playground/Resources
+
+# Breakpoint file
+*.xcbkptlist
+
+# OS generated files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
