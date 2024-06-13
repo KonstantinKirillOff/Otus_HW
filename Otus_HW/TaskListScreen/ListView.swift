@@ -43,6 +43,9 @@ struct ListView: View {
                 self.isLinkActive = true
             }
         }
+        .onDisappear {
+            self.selectedItemIndex = nil
+        }
         
     }
 }
