@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43FA5ABD2C1AC48700E921A1 /* Otus_HWApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5ABC2C1AC48700E921A1 /* Otus_HWApp.swift */; };
-		43FA5ABF2C1AC48700E921A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5ABE2C1AC48700E921A1 /* ContentView.swift */; };
+		43FA5ABD2C1AC48700E921A1 /* InitialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5ABC2C1AC48700E921A1 /* InitialApp.swift */; };
+		43FA5ABF2C1AC48700E921A1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5ABE2C1AC48700E921A1 /* MainView.swift */; };
 		43FA5AC12C1AC48800E921A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43FA5AC02C1AC48800E921A1 /* Assets.xcassets */; };
 		43FA5AC42C1AC48800E921A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43FA5AC32C1AC48800E921A1 /* Preview Assets.xcassets */; };
+		43FA5ACB2C1AC75D00E921A1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5ACA2C1AC75D00E921A1 /* ListView.swift */; };
+		43FA5ACD2C1AC77200E921A1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5ACC2C1AC77200E921A1 /* DetailView.swift */; };
+		43FA5ACF2C1AC9F100E921A1 /* ButtonForNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5ACE2C1AC9F000E921A1 /* ButtonForNavigationView.swift */; };
+		43FA5AD12C1ACD7E00E921A1 /* ModalPerformerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5AD02C1ACD7E00E921A1 /* ModalPerformerView.swift */; };
+		43FA5AD32C1ACEC400E921A1 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5AD22C1ACEC400E921A1 /* ModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		43FA5AB92C1AC48700E921A1 /* Otus_HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Otus_HW.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		43FA5ABC2C1AC48700E921A1 /* Otus_HWApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Otus_HWApp.swift; sourceTree = "<group>"; };
-		43FA5ABE2C1AC48700E921A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		43FA5ABC2C1AC48700E921A1 /* InitialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialApp.swift; sourceTree = "<group>"; };
+		43FA5ABE2C1AC48700E921A1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		43FA5AC02C1AC48800E921A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43FA5AC32C1AC48800E921A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		43FA5ACA2C1AC75D00E921A1 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		43FA5ACC2C1AC77200E921A1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		43FA5ACE2C1AC9F000E921A1 /* ButtonForNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonForNavigationView.swift; sourceTree = "<group>"; };
+		43FA5AD02C1ACD7E00E921A1 /* ModalPerformerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPerformerView.swift; sourceTree = "<group>"; };
+		43FA5AD22C1ACEC400E921A1 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +61,13 @@
 		43FA5ABB2C1AC48700E921A1 /* Otus_HW */ = {
 			isa = PBXGroup;
 			children = (
-				43FA5ABC2C1AC48700E921A1 /* Otus_HWApp.swift */,
-				43FA5ABE2C1AC48700E921A1 /* ContentView.swift */,
+				43FA5ABC2C1AC48700E921A1 /* InitialApp.swift */,
+				43FA5ABE2C1AC48700E921A1 /* MainView.swift */,
+				43FA5ACE2C1AC9F000E921A1 /* ButtonForNavigationView.swift */,
+				43FA5ACA2C1AC75D00E921A1 /* ListView.swift */,
+				43FA5ACC2C1AC77200E921A1 /* DetailView.swift */,
+				43FA5AD02C1ACD7E00E921A1 /* ModalPerformerView.swift */,
+				43FA5AD22C1ACEC400E921A1 /* ModalView.swift */,
 				43FA5AC02C1AC48800E921A1 /* Assets.xcassets */,
 				43FA5AC22C1AC48800E921A1 /* Preview Content */,
 			);
@@ -137,8 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43FA5ABF2C1AC48700E921A1 /* ContentView.swift in Sources */,
-				43FA5ABD2C1AC48700E921A1 /* Otus_HWApp.swift in Sources */,
+				43FA5AD12C1ACD7E00E921A1 /* ModalPerformerView.swift in Sources */,
+				43FA5ABF2C1AC48700E921A1 /* MainView.swift in Sources */,
+				43FA5ACD2C1AC77200E921A1 /* DetailView.swift in Sources */,
+				43FA5ABD2C1AC48700E921A1 /* InitialApp.swift in Sources */,
+				43FA5AD32C1ACEC400E921A1 /* ModalView.swift in Sources */,
+				43FA5ACB2C1AC75D00E921A1 /* ListView.swift in Sources */,
+				43FA5ACF2C1AC9F100E921A1 /* ButtonForNavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +307,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "K2.Otus-HW";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -316,6 +339,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "K2.Otus-HW";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

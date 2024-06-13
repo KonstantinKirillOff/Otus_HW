@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct Otus_HWApp: App {
+struct InitialApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
