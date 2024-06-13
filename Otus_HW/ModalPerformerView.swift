@@ -11,14 +11,17 @@ struct ModalPerformerView: View {
     @State private var isShowModal = false
     
     var body: some View {
-        VStack {
-            Text("Screen for demonstrate show modal")
-            Button("Open modal") {
-                isShowModal.toggle()
-            }
-        }.sheet(isPresented: $isShowModal, content: {
-            ModalView()
-        })
+        NavigationView {
+            VStack {
+                Text("Screen for demonstrate show modal")
+                Button("Open modal") {
+                    isShowModal.toggle()
+                }
+            }.sheet(isPresented: $isShowModal, content: {
+                ModalView()
+            })
+            .navigationTitle("Modal performer")
+        }
     }
 }
 

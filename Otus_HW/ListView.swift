@@ -8,10 +8,26 @@
 import SwiftUI
 
 struct ListView: View {
+    @State private var listItems = [ListItem]()
+    
     var body: some View {
-        VStack {
-            Text("List view")
+        NavigationView {
+            List(listItems) { item in
+                NavigationLink {
+                    DetailView()
+                } label: {
+                    Text(item.name)
+                }
+            }
+            .navigationTitle("Task List")
         }
+        .listStyle(.plain)
+        .task {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                listItems = ListItem.getItemsForList()
+            }
+        }
+        
     }
 }
 

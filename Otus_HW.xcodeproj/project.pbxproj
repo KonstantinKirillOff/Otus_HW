@@ -16,6 +16,7 @@
 		43FA5ACF2C1AC9F100E921A1 /* ButtonForNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5ACE2C1AC9F000E921A1 /* ButtonForNavigationView.swift */; };
 		43FA5AD12C1ACD7E00E921A1 /* ModalPerformerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5AD02C1ACD7E00E921A1 /* ModalPerformerView.swift */; };
 		43FA5AD32C1ACEC400E921A1 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5AD22C1ACEC400E921A1 /* ModalView.swift */; };
+		43FA5AD52C1AD42B00E921A1 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5AD42C1AD42B00E921A1 /* ListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		43FA5ACE2C1AC9F000E921A1 /* ButtonForNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonForNavigationView.swift; sourceTree = "<group>"; };
 		43FA5AD02C1ACD7E00E921A1 /* ModalPerformerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPerformerView.swift; sourceTree = "<group>"; };
 		43FA5AD22C1ACEC400E921A1 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		43FA5AD42C1AD42B00E921A1 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				43FA5ABE2C1AC48700E921A1 /* MainView.swift */,
 				43FA5ACE2C1AC9F000E921A1 /* ButtonForNavigationView.swift */,
 				43FA5ACA2C1AC75D00E921A1 /* ListView.swift */,
+				43FA5AD42C1AD42B00E921A1 /* ListItem.swift */,
 				43FA5ACC2C1AC77200E921A1 /* DetailView.swift */,
 				43FA5AD02C1ACD7E00E921A1 /* ModalPerformerView.swift */,
 				43FA5AD22C1ACEC400E921A1 /* ModalView.swift */,
@@ -156,6 +159,7 @@
 				43FA5ABF2C1AC48700E921A1 /* MainView.swift in Sources */,
 				43FA5ACD2C1AC77200E921A1 /* DetailView.swift in Sources */,
 				43FA5ABD2C1AC48700E921A1 /* InitialApp.swift in Sources */,
+				43FA5AD52C1AD42B00E921A1 /* ListItem.swift in Sources */,
 				43FA5AD32C1ACEC400E921A1 /* ModalView.swift in Sources */,
 				43FA5ACB2C1AC75D00E921A1 /* ListView.swift in Sources */,
 				43FA5ACF2C1AC9F100E921A1 /* ButtonForNavigationView.swift in Sources */,

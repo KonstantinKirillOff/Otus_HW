@@ -9,11 +9,14 @@ import SwiftUI
 
 struct ButtonForNavigationView: View {
     var body: some View {
-        VStack {
-            Text("Screen for navigation to list item")
-            Button("To list item") {
-                print("navigate")
-            }            
+        NavigationView {
+            VStack {
+                Text("Screen for navigation to list item")
+                Button("To list item") {
+                    print("navigate")
+                }
+            }
+            .navigationTitle("Tap navigator")
         }
     }
 }

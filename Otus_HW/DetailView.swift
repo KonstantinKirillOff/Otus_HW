@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
+            Image(systemName: "filemenu.and.cursorarrow")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Detail view")
