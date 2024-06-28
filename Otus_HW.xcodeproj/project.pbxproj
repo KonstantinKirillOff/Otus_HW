@@ -24,6 +24,11 @@
 		43D186B52C2D7BF100B90430 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D186A42C2D7BF100B90430 /* Models.swift */; };
 		43D186B62C2D7BF100B90430 /* SynchronizedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D186A52C2D7BF100B90430 /* SynchronizedDictionary.swift */; };
 		43D186B72C2D7BF100B90430 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D186A62C2D7BF100B90430 /* Configuration.swift */; };
+		43D186BA2C2D7F7900B90430 /* Collections+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D186B92C2D7F7900B90430 /* Collections+Extension.swift */; };
+		43D186C02C2D829F00B90430 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D186BF2C2D829F00B90430 /* NewsListViewModel.swift */; };
+		43D186C22C2D8EAC00B90430 /* Article+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D186C12C2D8EAC00B90430 /* Article+Extension.swift */; };
+		43D186C52C2D911400B90430 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D186C42C2D911400B90430 /* ApiKeys.swift */; };
+		43D186C82C2D915700B90430 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D186C72C2D915700B90430 /* URL+Extension.swift */; };
 		43FA5ABD2C1AC48700E921A1 /* Otus_HWApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5ABC2C1AC48700E921A1 /* Otus_HWApp.swift */; };
 		43FA5ABF2C1AC48700E921A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA5ABE2C1AC48700E921A1 /* ContentView.swift */; };
 		43FA5AC12C1AC48800E921A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43FA5AC02C1AC48800E921A1 /* Assets.xcassets */; };
@@ -48,6 +53,11 @@
 		43D186A42C2D7BF100B90430 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		43D186A52C2D7BF100B90430 /* SynchronizedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynchronizedDictionary.swift; sourceTree = "<group>"; };
 		43D186A62C2D7BF100B90430 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		43D186B92C2D7F7900B90430 /* Collections+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collections+Extension.swift"; sourceTree = "<group>"; };
+		43D186BF2C2D829F00B90430 /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
+		43D186C12C2D8EAC00B90430 /* Article+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+Extension.swift"; sourceTree = "<group>"; };
+		43D186C42C2D911400B90430 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		43D186C72C2D915700B90430 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		43FA5AB92C1AC48700E921A1 /* Otus_HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Otus_HW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FA5ABC2C1AC48700E921A1 /* Otus_HWApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Otus_HWApp.swift; sourceTree = "<group>"; };
 		43FA5ABE2C1AC48700E921A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +132,42 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		43D186B82C2D7EF200B90430 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				43D186B92C2D7F7900B90430 /* Collections+Extension.swift */,
+				43D186C12C2D8EAC00B90430 /* Article+Extension.swift */,
+				43D186C72C2D915700B90430 /* URL+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		43D186BB2C2D81D000B90430 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				43D186912C2D7BF100B90430 /* OpenAPIClient */,
+				43D186BC2C2D824700B90430 /* NewsListScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		43D186BC2C2D824700B90430 /* NewsListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				43D186B82C2D7EF200B90430 /* Extensions */,
+				43D186BF2C2D829F00B90430 /* NewsListViewModel.swift */,
+			);
+			path = NewsListScreen;
+			sourceTree = "<group>";
+		};
+		43D186C32C2D90F500B90430 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				43D186C42C2D911400B90430 /* ApiKeys.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		43FA5AB02C1AC48700E921A1 = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +187,8 @@
 		43FA5ABB2C1AC48700E921A1 /* Otus_HW */ = {
 			isa = PBXGroup;
 			children = (
-				43D186912C2D7BF100B90430 /* OpenAPIClient */,
+				43D186C32C2D90F500B90430 /* Resources */,
+				43D186BB2C2D81D000B90430 /* Modules */,
 				43FA5ABC2C1AC48700E921A1 /* Otus_HWApp.swift */,
 				43FA5ABE2C1AC48700E921A1 /* ContentView.swift */,
 				43FA5AC02C1AC48800E921A1 /* Assets.xcassets */,
@@ -236,12 +283,17 @@
 				43D186AE2C2D7BF100B90430 /* ArticleList.swift in Sources */,
 				43D186B42C2D7BF100B90430 /* JSONEncodingHelper.swift in Sources */,
 				43FA5ABF2C1AC48700E921A1 /* ContentView.swift in Sources */,
+				43D186C02C2D829F00B90430 /* NewsListViewModel.swift in Sources */,
 				43D186A82C2D7BF100B90430 /* URLSessionImplementations.swift in Sources */,
+				43D186BA2C2D7F7900B90430 /* Collections+Extension.swift in Sources */,
 				43D186B22C2D7BF100B90430 /* Validation.swift in Sources */,
 				43D186B02C2D7BF100B90430 /* ErrorModel.swift in Sources */,
 				43D186A92C2D7BF100B90430 /* ArticlesAPI.swift in Sources */,
 				43D186B62C2D7BF100B90430 /* SynchronizedDictionary.swift in Sources */,
 				43D186B12C2D7BF100B90430 /* Extensions.swift in Sources */,
+				43D186C52C2D911400B90430 /* ApiKeys.swift in Sources */,
+				43D186C82C2D915700B90430 /* URL+Extension.swift in Sources */,
+				43D186C22C2D8EAC00B90430 /* Article+Extension.swift in Sources */,
 				43D186B32C2D7BF100B90430 /* JSONDataEncoding.swift in Sources */,
 				43D186AD2C2D7BF100B90430 /* Source.swift in Sources */,
 				43D186AA2C2D7BF100B90430 /* CodableHelper.swift in Sources */,
