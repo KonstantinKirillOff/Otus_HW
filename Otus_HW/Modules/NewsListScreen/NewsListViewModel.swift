@@ -26,7 +26,6 @@ class NewsListViewModel: ObservableObject {
                 pageSize: 20
             )
         }
-        
         guard stateForSection.currentPage * 100 <= stateForSection.totalResults else { return }
         guard canLoad else { return }
         
@@ -45,12 +44,12 @@ class NewsListViewModel: ObservableObject {
             
             if let resultArticlesList = result {
                 let articles = resultArticlesList.articles ?? []
-                news.append(contentsOf: articles)
-                paginationStates[newsSection] = PaginationState(
-                    currentPage: stateForSection.currentPage + 1,
-                    totalResults: resultArticlesList.totalResults,
-                    pageSize: 20
-                )
+                
+                var updatedState = stateForSection
+                updatedState.news.append(contentsOf: articles)
+                updatedState.currentPage += 1
+                paginationStates[newsSection] = updatedState
+                
             } else {
                 print("Error")
             }
@@ -64,15 +63,17 @@ class NewsListViewModel: ObservableObject {
         loadArticles()
     }
     
-    enum NewsSections: String, Hashable {
+    enum NewsSections: String, Hashable, CaseIterable {
         case iphone = "Iphone 16"
         case newFilms = "New cinema 2024"
         case dollar = "Dollar rate"
     }
     
     struct PaginationState {
-        let currentPage: Int
-        let totalResults: Int
+        var currentPage: Int
+        var totalResults: Int
         let pageSize: Int
+        
+        var news: [Article] = []
     }
 }
