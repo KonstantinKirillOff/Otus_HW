@@ -20,12 +20,13 @@ open class ArticlesAPI {
      - parameter sortBy: (query) Sort 
      - parameter language: (query) Language in two letters 
      - parameter apiKey: (query) API key 
+     - parameter pageSize: (query) size of page (optional)
      - parameter page: (query) number of page (optional)
      - returns: ArticleList
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func everythingGet(q: String, from: String, sortBy: String, language: String, apiKey: String, page: Int? = nil) async throws -> ArticleList {
-        return try await everythingGetWithRequestBuilder(q: q, from: from, sortBy: sortBy, language: language, apiKey: apiKey, page: page).execute().body
+    open class func everythingGet(q: String, from: String, sortBy: String, language: String, apiKey: String, pageSize: Int? = nil, page: Int? = nil) async throws -> ArticleList {
+        return try await everythingGetWithRequestBuilder(q: q, from: from, sortBy: sortBy, language: language, apiKey: apiKey, pageSize: pageSize, page: page).execute().body
     }
 
     /**
@@ -36,10 +37,11 @@ open class ArticlesAPI {
      - parameter sortBy: (query) Sort 
      - parameter language: (query) Language in two letters 
      - parameter apiKey: (query) API key 
+     - parameter pageSize: (query) size of page (optional)
      - parameter page: (query) number of page (optional)
      - returns: RequestBuilder<ArticleList> 
      */
-    open class func everythingGetWithRequestBuilder(q: String, from: String, sortBy: String, language: String, apiKey: String, page: Int? = nil) -> RequestBuilder<ArticleList> {
+    open class func everythingGetWithRequestBuilder(q: String, from: String, sortBy: String, language: String, apiKey: String, pageSize: Int? = nil, page: Int? = nil) -> RequestBuilder<ArticleList> {
         let localVariablePath = "/everything/"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -51,6 +53,7 @@ open class ArticlesAPI {
             "sortBy": (wrappedValue: sortBy, isExplode: true),
             "language": (wrappedValue: language, isExplode: true),
             "apiKey": (wrappedValue: apiKey, isExplode: true),
+            "pageSize": (wrappedValue: pageSize?.encodeToJSON(), isExplode: true),
             "page": (wrappedValue: page!, isExplode: true),
         ])
 

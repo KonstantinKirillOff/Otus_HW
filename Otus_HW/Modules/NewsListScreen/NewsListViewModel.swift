@@ -9,35 +9,70 @@ import Foundation
 
 class NewsListViewModel: ObservableObject {
     @Published var news: [Article] = []
+    @Published var isLoading = false
     
+    private var newsSection: NewsSections = .iphone
     private var canLoad = true
-    private var currentPage = 1
-    private var totalResults = 100
-    private let pageSize = 100
+    private var paginationStates: [NewsSections : PaginationState] = [:]
     
     func loadArticles() {
-        guard currentPage * 100 <= totalResults else { return }
+        let stateForSection: PaginationState
+        if let state = paginationStates[newsSection] {
+            stateForSection = state
+        } else {
+            stateForSection = PaginationState(
+                currentPage: 1,
+                totalResults: 100,
+                pageSize: 20
+            )
+        }
+        
+        guard stateForSection.currentPage * 100 <= stateForSection.totalResults else { return }
         guard canLoad else { return }
         
         canLoad = false
-        
+        isLoading = true
         Task { @MainActor in
             let result = try? await ArticlesAPI.everythingGet(
-                q: "Tesla",
+                q: newsSection.rawValue,
                 from: "2024",
                 sortBy: "publishedAt",
                 language: "en",
                 apiKey: Key.News.newsApi,
-                page: currentPage
+                pageSize: stateForSection.pageSize,
+                page: stateForSection.currentPage
             )
             
             if let resultArticlesList = result {
                 let articles = resultArticlesList.articles ?? []
-                totalResults = resultArticlesList.totalResults
-                
                 news.append(contentsOf: articles)
-                currentPage += 1
+                paginationStates[newsSection] = PaginationState(
+                    currentPage: stateForSection.currentPage + 1,
+                    totalResults: resultArticlesList.totalResults,
+                    pageSize: 20
+                )
+            } else {
+                print("Error")
             }
+            canLoad = true
+            isLoading = false
         }
+    }
+    
+    func sectionDidChange(section: NewsSections) {
+        newsSection = section
+        loadArticles()
+    }
+    
+    enum NewsSections: String, Hashable {
+        case iphone = "Iphone 16"
+        case newFilms = "New cinema 2024"
+        case dollar = "Dollar rate"
+    }
+    
+    struct PaginationState {
+        let currentPage: Int
+        let totalResults: Int
+        let pageSize: Int
     }
 }
