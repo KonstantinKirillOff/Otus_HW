@@ -14,6 +14,6 @@ extension RandomAccessCollection where Self.Element: Identifiable {
             return false
         }
         let distance = distance(from: itemIndex, to: endIndex)
-        return distance == 2
+        return distance == 5
     }
 }

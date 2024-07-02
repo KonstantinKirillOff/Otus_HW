@@ -17,9 +17,17 @@ struct NewsCell: View {
                 .font(.headline)
             Text(description)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding()
+        .background(Color.white)
+        .cornerRadius(8)
+        .shadow(radius: 4)
     }
 }
 
 #Preview {
-    NewsCell(title: "Title", description: "Lorem ipsum")
+    NewsCell(
+        title: "Title",
+        description: "Lorem ipsum"
+    )
 }

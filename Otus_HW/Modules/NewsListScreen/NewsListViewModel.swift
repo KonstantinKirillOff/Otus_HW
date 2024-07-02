@@ -56,6 +56,10 @@ class NewsListViewModel: ObservableObject {
         loadArticles()
     }
     
+    func removeRow(at index: Int) {
+        news.remove(at: index)
+    }
+    
     enum NewsSections: String, Hashable, CaseIterable {
         case iphone = "new iphone 16"
         case marvelFilms = "Marvel"
