@@ -12,25 +12,18 @@ class NewsListViewModel: ObservableObject {
     @Published var isLoading = false
     
     private var newsSection: NewsSections = .iphone
+
     private var canLoad = true
-    private var paginationStates: [NewsSections : PaginationState] = [:]
+    private var currentPage = 1
+    private var totalResults = 1000
+    private let pageSize = 20
     
     func loadArticles() {
-        let stateForSection: PaginationState
-        if let state = paginationStates[newsSection] {
-            stateForSection = state
-        } else {
-            stateForSection = PaginationState(
-                currentPage: 1,
-                totalResults: 100,
-                pageSize: 20
-            )
-        }
-        guard stateForSection.currentPage * 100 <= stateForSection.totalResults else { return }
+        guard currentPage * 100 <= totalResults else { return }
         guard canLoad else { return }
         
         canLoad = false
-        isLoading = true
+        isLoading = news.count == 0
         Task { @MainActor in
             let result = try? await ArticlesAPI.everythingGet(
                 q: newsSection.rawValue,
@@ -38,18 +31,15 @@ class NewsListViewModel: ObservableObject {
                 sortBy: "publishedAt",
                 language: "en",
                 apiKey: Key.News.newsApi,
-                pageSize: stateForSection.pageSize,
-                page: stateForSection.currentPage
+                pageSize: pageSize,
+                page: currentPage
             )
             
             if let resultArticlesList = result {
                 let articles = resultArticlesList.articles ?? []
-                
-                var updatedState = stateForSection
-                updatedState.news.append(contentsOf: articles)
-                updatedState.currentPage += 1
-                paginationStates[newsSection] = updatedState
-                
+                currentPage += 1
+                totalResults = resultArticlesList.totalResults
+                news.append(contentsOf: articles)
             } else {
                 print("Error")
             }
@@ -60,20 +50,14 @@ class NewsListViewModel: ObservableObject {
     
     func sectionDidChange(section: NewsSections) {
         newsSection = section
+        news = []
+        currentPage = 1
+        totalResults = 1000
         loadArticles()
     }
     
     enum NewsSections: String, Hashable, CaseIterable {
-        case iphone = "Iphone 16"
-        case newFilms = "New cinema 2024"
-        case dollar = "Dollar rate"
-    }
-    
-    struct PaginationState {
-        var currentPage: Int
-        var totalResults: Int
-        let pageSize: Int
-        
-        var news: [Article] = []
+        case iphone = "new iphone 16"
+        case marvelFilms = "Marvel"
     }
 }

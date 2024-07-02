@@ -23,8 +23,8 @@ struct NewsListView: View {
             .pickerStyle(.segmented)
             .padding(.horizontal)
             .onChange(of: selectedSegment) { oldValue, newValue in
-                if let enumValue = NewsListViewModel.NewsSections(rawValue: newValue) {
-                    viewModel.sectionDidChange(section: enumValue)
+                if let newEnumValue = NewsListViewModel.NewsSections(rawValue: newValue) {
+                    viewModel.sectionDidChange(section: newEnumValue)
                 }
             }
             

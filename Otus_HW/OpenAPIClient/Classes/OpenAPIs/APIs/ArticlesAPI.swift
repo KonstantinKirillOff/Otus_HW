@@ -53,7 +53,7 @@ open class ArticlesAPI {
             "sortBy": (wrappedValue: sortBy, isExplode: true),
             "language": (wrappedValue: language, isExplode: true),
             "apiKey": (wrappedValue: apiKey, isExplode: true),
-            "pageSize": (wrappedValue: pageSize?.encodeToJSON(), isExplode: true),
+            "pageSize": (wrappedValue: pageSize, isExplode: true),
             "page": (wrappedValue: page!, isExplode: true),
         ])
 
