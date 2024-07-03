@@ -19,7 +19,7 @@ class NewsListViewModel: ObservableObject {
     private let pageSize = 20
     
     func loadArticles() {
-        guard currentPage * 100 <= totalResults else { return }
+        guard currentPage * pageSize <= totalResults else { return }
         guard canLoad else { return }
         
         canLoad = false
@@ -56,8 +56,10 @@ class NewsListViewModel: ObservableObject {
         loadArticles()
     }
     
-    func removeRow(at index: Int) {
-        news.remove(at: index)
+    func removeRow(at id: String) {
+        if let index = news.firstIndex(where: { $0.id == id }) {
+            news.remove(at: index)
+        }
     }
     
     enum NewsSections: String, Hashable, CaseIterable {

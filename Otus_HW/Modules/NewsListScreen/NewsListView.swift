@@ -11,7 +11,7 @@ import SwiftUI
 struct NewsListView: View {
     @StateObject var viewModel = NewsListViewModel()
     @State private var selectedSegment = "new iphone 16"
-    @State private var animatingIndex: Int? = nil
+    @State private var animatingId: String? = nil
     
     var body: some View {
         GeometryReader { fullView in
@@ -39,26 +39,26 @@ struct NewsListView: View {
                     Spacer()
                 } else {
                     List {
-                        ForEach(viewModel.news.indices) { index in
-                            let article = viewModel.news[index]
+                        ForEach(viewModel.news) { article in
+                                let isAnimatingElement = (animatingId == article.id)
                                 NewsCell(
                                     title: article.title ?? "Title",
                                     description: article.description ?? "Empty description"
                                 )
                                 
-                                .rotationEffect(.degrees(animatingIndex != index ? 0 : -45))
+                                .rotationEffect(.degrees(isAnimatingElement ? -45 : 0))
                                 .offset(
-                                    x: animatingIndex == index ? fullView.size.width / 2 - 25 : 0,
-                                    y: animatingIndex == index ? fullView.size.height / 2 - 25 : 0
+                                    x: isAnimatingElement ? fullView.size.width / 2 - 25 : 0,
+                                    y: isAnimatingElement ? fullView.size.height / 2 - 25 : 0
                                 )
-                                .scaleEffect(animatingIndex != index ? 1 : 0.1)
+                                .scaleEffect(isAnimatingElement ? 0.1 : 1)
                                 .onTapGesture {
                                     withAnimation(.linear(duration: 0.5)) {
-                                        animatingIndex = index
+                                        animatingId = article.id
                                     }
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                        viewModel.removeRow(at: index)
-                                        animatingIndex = nil
+                                        viewModel.removeRow(at: article.id)
+                                        animatingId = nil
                                     }
                                 }
                                 .onAppear {
