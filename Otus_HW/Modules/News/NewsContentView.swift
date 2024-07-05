@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewsContentView: View {
+    @EnvironmentObject var navigationViewModel: NavigationViewModel
     let article: Article
     
     var body: some View {
@@ -18,6 +19,19 @@ struct NewsContentView: View {
             }
         }
         .padding()
+        .navigationTitle("Content")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Root") {
+                    navigationViewModel.popToRoot()
+                }
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Skip 1") {
+                    navigationViewModel.skip(howMuch: 1)
+                }
+            }
+        }
     }
 }
 

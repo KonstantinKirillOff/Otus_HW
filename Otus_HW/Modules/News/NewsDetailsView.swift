@@ -25,7 +25,8 @@ struct NewsDetailsView: View {
                 }
             }
         }
-        .padding(EdgeInsets(top: 20, leading: 30, bottom: 20, trailing: 30))
+        .padding(.horizontal)
+        .navigationTitle("Description")
     }
 }
 
