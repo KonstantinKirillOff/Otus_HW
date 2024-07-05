@@ -12,6 +12,7 @@ struct Otus_HWApp: App {
     var body: some Scene {
         WindowGroup {
             NewsListView()
+                .environmentObject(NavigationViewModel())
         }
     }
 }
