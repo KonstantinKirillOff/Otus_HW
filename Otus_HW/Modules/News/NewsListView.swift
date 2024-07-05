@@ -19,19 +19,12 @@ struct NewsListView: View {
         NavigationStack(path: $navigationViewModel.articlesStack) {
             GeometryReader { fullView in
                 VStack {
-                    Picker("", selection: $selectedSegment) {
-                        ForEach(NewsListViewModel.NewsSections.allCases, id: \.self) { newsSection in
-                            Text(newsSection.rawValue).tag(newsSection.rawValue)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                    .padding(.horizontal)
+                    SegmentedControl(selectedSegment: $selectedSegment)
                     .onChange(of: selectedSegment) { oldValue, newValue in
                         if let newEnumValue = NewsListViewModel.NewsSections(rawValue: newValue) {
                             viewModel.sectionDidChange(section: newEnumValue)
                         }
                     }
-                    
                     if viewModel.isLoading {
                         Spacer()
                         ProgressView()
@@ -92,7 +85,6 @@ struct NewsListView: View {
                     viewModel.loadArticles()
                 }
             }
-            
         }
     }
 }
