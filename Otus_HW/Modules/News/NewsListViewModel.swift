@@ -8,6 +8,8 @@
 import Foundation
 
 class NewsListViewModel: ObservableObject {
+    @Injected var networkService: ArticlesAPI?
+    
     @Published var news: [Article] = []
     @Published var isLoading = false
     
@@ -25,7 +27,7 @@ class NewsListViewModel: ObservableObject {
         canLoad = false
         isLoading = news.count == 0
         Task { @MainActor in
-            let result = try? await ArticlesAPI.everythingGet(
+            let result = try? await networkService?.everythingGet(
                 q: newsSection.rawValue,
                 from: "2024",
                 sortBy: "publishedAt",

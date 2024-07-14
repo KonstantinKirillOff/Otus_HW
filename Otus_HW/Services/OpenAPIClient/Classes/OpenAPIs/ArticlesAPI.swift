@@ -25,7 +25,7 @@ open class ArticlesAPI {
      - returns: ArticleList
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func everythingGet(q: String, from: String, sortBy: String, language: String, apiKey: String, pageSize: Int? = nil, page: Int? = nil) async throws -> ArticleList {
+    func everythingGet(q: String, from: String, sortBy: String, language: String, apiKey: String, pageSize: Int? = nil, page: Int? = nil) async throws -> ArticleList {
         return try await everythingGetWithRequestBuilder(q: q, from: from, sortBy: sortBy, language: language, apiKey: apiKey, pageSize: pageSize, page: page).execute().body
     }
 
@@ -41,7 +41,7 @@ open class ArticlesAPI {
      - parameter page: (query) number of page (optional)
      - returns: RequestBuilder<ArticleList> 
      */
-    open class func everythingGetWithRequestBuilder(q: String, from: String, sortBy: String, language: String, apiKey: String, pageSize: Int? = nil, page: Int? = nil) -> RequestBuilder<ArticleList> {
+    private func everythingGetWithRequestBuilder(q: String, from: String, sortBy: String, language: String, apiKey: String, pageSize: Int? = nil, page: Int? = nil) -> RequestBuilder<ArticleList> {
         let localVariablePath = "/everything/"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
